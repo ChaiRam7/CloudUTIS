@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">UTIS</string>
+    <string name="title_activity_home">Home_activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="at_codecrafters_we_are_a_dedicated_team_committed_to_enhancing_your_commuting_experience_through_innovative_technological_solutions_our_latest_endeavor_the_utis_unified_transit_information_system_project_aims_to_simplify_the_process_of_accessing_government_bus_routes_timings_and_schedules_for_android_users_with_utis_we_recognize_the_challenges_commuters_face_in_navigating_public_transportation_systems_efficiently_our_goal_is_to_empower_users_with_a_user_friendly_interface_that_provides_comprehensive_information_about_government_bus_services_whether_you_re_a_daily_commuter_or_a_traveler_exploring_new_destinations_utis_strives_to_be_your_go_to_companion_for_hassle_free_transit_planning_our_team_at_codecrafters_combines_expertise_in_software_development_and_a_passion_for_improving_urban_mobility_by_leveraging_the_latest_advancements_in_mobile_technology_we_ensure_that_utis_delivers_accurate_and_real_time_transit_data_allowing_users_to_make_informed_decisions_about_their_journeys_through_utis_we_aspire_to_contribute_to_the_development_of_sustainable_and_accessible_transportation_infrastructure_we_believe_that_by_simplifying_access_to_public_transit_information_we_can_encourage_more_people_to_choose_eco_friendly_modes_of_transportation_thereby_reducing_congestion_and_environmental_impact_join_us_on_our_mission_to_revolutionize_commuting_with_utis_together_let_s_navigate_cities_smarter_and_make_every_journey_a_seamless_experience">At CodeCrafters, we are a dedicated team committed to enhancing your commuting experience through innovative technological solutions. Our latest endeavor, the UTIS (Unified Transit Information System) project, aims to simplify the process of accessing government bus routes, timings, and schedules for Android users. With UTIS, we recognize the challenges commuters face in navigating public transportation systems efficiently. Our goal is to empower users with a user-friendly interface that provides comprehensive information about government bus services. Whether you\'re a daily commuter or a traveler exploring new destinations, UTIS strives to be your go-to companion for hassle-free transit planning. Our team at CodeCrafters combines expertise in software development and a passion for improving urban mobility. By leveraging the latest advancements in mobile technology, we ensure that UTIS delivers accurate and real-time transit data, allowing users to make informed decisions about their journeys. Through UTIS, we aspire to contribute to the development of sustainable and accessible transportation infrastructure. We believe that by simplifying access to public transit information, we can encourage more people to choose eco-friendly modes of transportation, thereby reducing congestion and environmental impact. Join us on our mission to revolutionize commuting with UTIS. Together, let\'s navigate cities smarter and make every journey a seamless experience.</string>
+    <string name="no_text">No_text</string>
+    <string name="todo">TODO</string>
+    <string name="no_messages">No messages!!!!!!!</string>
+</resources>

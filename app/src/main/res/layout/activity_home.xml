@@ -24,24 +24,25 @@
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="21dp"
             app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/notification"
+            android:layout_width="72dp"
+            android:layout_height="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="762dp"
+            app:srcCompat="@drawable/quotes" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <ImageView
-            android:id="@+id/notification"
-            android:layout_width="69dp"
-            android:layout_height="57dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
-            android:layout_marginBottom="48dp"
-            app:srcCompat="@drawable/arrow" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -74,7 +75,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="3dp"
-            android:background="#8C51D5"
+            android:background="#298B8F"
 
             />
 

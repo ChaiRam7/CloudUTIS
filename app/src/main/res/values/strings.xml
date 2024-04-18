@@ -49,4 +49,5 @@
     <string name="no_messages">No messages!!!!!!!</string>
     <string name="TextView">TextView</string>
     <string name="No_direct_buses_available">TextView</string>
+    <string name="BusBuddyVellore">app_name</string>
 </resources>

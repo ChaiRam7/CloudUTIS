@@ -4,31 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".HomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="#1A237E"
-
-        >
+        android:background="#1A237E">
 
         <ImageView
             android:id="@+id/imageBack"
-            android:layout_width="87dp"
-            android:layout_height="65dp"
+            android:layout_width="72dp"
+            android:layout_height="58dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginBottom="21dp"
+            android:layout_marginTop="27dp"
             app:srcCompat="@drawable/back" />
 
         <ImageView
             android:id="@+id/notification"
-            android:layout_width="72dp"
-            android:layout_height="64dp"
+            android:layout_width="63dp"
+            android:layout_height="58dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -43,11 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="134dp"
-            android:layout_height="91dp"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
@@ -57,7 +55,7 @@
             android:layout_marginLeft="142dp"
             android:layout_marginEnd="135dp"
             android:layout_marginRight="135dp"
-            android:layout_marginBottom="432dp"
+            android:layout_marginBottom="436dp"
             app:srcCompat="@drawable/road" />
 
         <Spinner
@@ -75,9 +73,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="3dp"
-            android:background="#298B8F"
-
-            />
+            android:background="#1A237E" />
 
         <Button
             android:id="@+id/timing"
@@ -94,6 +90,9 @@
             android:layout_marginRight="204dp"
             android:layout_marginBottom="219dp"
             android:text="Timing"
+            android:textColor="#000000"
+            android:textColorHighlight="#FFFEFE"
+            android:textColorHint="#F6F5F5"
             app:iconSize="24dp" />
 
         <Button
@@ -125,18 +124,18 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="324dp"
-            android:background="#298B8F"
+            android:background="#1A237E"
             android:dropDownSelector="@android:drawable/arrow_down_float" />
 
         <ImageView
             android:id="@+id/AboutUs"
-            android:layout_width="68dp"
-            android:layout_height="57dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="66dp"
+            android:layout_height="54dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="279dp"
-            android:layout_marginRight="279dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginBottom="54dp"
             app:srcCompat="@drawable/about" />
 
@@ -170,6 +169,61 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+
+        <ImageView
+            android:id="@+id/chatImageView"
+            android:layout_width="51dp"
+            android:layout_height="47dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="54dp"
+            android:src="@drawable/support" />
+
+        <LinearLayout
+            android:id="@+id/chatNumbersLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chatImageView"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/chatNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Chat Number 1: +1234567890" />
+
+            <TextView
+                android:id="@+id/chatNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Chat Number 2: +9876543210" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="108dp"
+            android:layout_height="109dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="155dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginRight="148dp"
+            android:layout_marginBottom="23dp"
+            android:src="@drawable/tnstc" />
+
+
     </RelativeLayout>
+
 
 </RelativeLayout>

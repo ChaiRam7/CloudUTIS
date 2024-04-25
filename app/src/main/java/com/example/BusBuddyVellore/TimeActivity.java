@@ -1,4 +1,4 @@
-package com.example.utis;
+package com.example.BusBuddyVellore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.utis.R;
 
 public class TimeActivity extends AppCompatActivity {
     TextView temp;

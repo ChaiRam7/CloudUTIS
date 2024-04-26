@@ -91,23 +91,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        TextView chatNumber1 = findViewById(R.id.chatNumber1);
-        TextView chatNumber2 = findViewById(R.id.chatNumber2);
-        chatNumber1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openWhatsAppChat(".");
-            }
 
-            public void openWhatsAppChat(String phoneNumber) {
-                // Open WhatsApp chat using Intent
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                String url = "https://api.whatsapp.com/send?phone=" + phoneNumber;
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
 
-        });
+
 
         // Inflate the layout containing the timelyTextView
         View timeLayout = getLayoutInflater().inflate(R.layout.activity_time, null);

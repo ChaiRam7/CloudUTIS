@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_1"
+
     tools:context=".Admin">
 
 
@@ -46,8 +46,8 @@
         android:layout_marginRight="8dp"
         android:fontFamily="@font/aleo_bold"
         android:text="HAPPY JOURNEY"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textSize="23sp"
+         />
 
 
 </RelativeLayout>

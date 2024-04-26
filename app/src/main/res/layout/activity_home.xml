@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
     tools:context=".HomeActivity">
 
     <RelativeLayout
@@ -73,12 +72,14 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="3dp"
-            android:background="#1A237E" />
+            android:background="#757DCC"
+
+            android:textColor="@color/your_text_color" />
 
         <Button
             android:id="@+id/timing"
-            android:layout_width="174dp"
-            android:layout_height="75dp"
+            android:layout_width="140dp"
+            android:layout_height="71dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
@@ -86,29 +87,29 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="33dp"
             android:layout_marginLeft="33dp"
-            android:layout_marginEnd="204dp"
-            android:layout_marginRight="204dp"
-            android:layout_marginBottom="219dp"
+            android:layout_marginEnd="183dp"
+            android:layout_marginRight="183dp"
+            android:layout_marginBottom="218dp"
             android:text="Timing"
-            android:textColor="#000000"
-            android:textColorHighlight="#FFFEFE"
-            android:textColorHint="#F6F5F5"
-            app:iconSize="24dp" />
+
+
+            android:textColorLink="#C53C3C"
+            android:textSize="17.5sp"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/schedule"
-            android:layout_width="170dp"
-            android:layout_height="75dp"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:layout_marginBottom="219dp"
             android:text="Schedule"
-            android:textColorHighlight="#880E4F"
-            android:textColorHint="#880E4F"
-            android:textColorLink="#880E4F" />
+            android:textSize="17.5sp" />
 
         <Spinner
             android:id="@+id/arrival"
@@ -124,19 +125,20 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="324dp"
-            android:background="#1A237E"
-            android:dropDownSelector="@android:drawable/arrow_down_float" />
+            android:background="#757DCC"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:textColor="@color/your_text_color" />
 
         <ImageView
             android:id="@+id/AboutUs"
-            android:layout_width="66dp"
-            android:layout_height="54dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginBottom="54dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginBottom="51dp"
             app:srcCompat="@drawable/about" />
 
         <TextView
@@ -151,6 +153,7 @@
             android:layout_marginBottom="1dp"
             android:fontFamily="@font/aldrich"
             android:text="Departure Zone"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -165,21 +168,23 @@
             android:layout_marginLeft="128dp"
             android:layout_marginBottom="0dp"
             android:fontFamily="@font/aldrich"
+            android:shadowColor="#FFFFFF"
             android:text="Arrival Zone"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
 
 
         <ImageView
             android:id="@+id/chatImageView"
-            android:layout_width="51dp"
-            android:layout_height="47dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="58dp"
-            android:layout_marginRight="58dp"
-            android:layout_marginBottom="54dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="52dp"
             android:src="@drawable/support" />
 
         <LinearLayout
@@ -190,36 +195,22 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
-                android:id="@+id/chatNumber1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Chat Number 1: +1234567890" />
-
-            <TextView
-                android:id="@+id/chatNumber2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Chat Number 2: +9876543210" />
-
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="108dp"
             android:layout_height="109dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="155dp"
-            android:layout_marginLeft="155dp"
-            android:layout_marginEnd="148dp"
-            android:layout_marginRight="148dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginRight="42dp"
             android:layout_marginBottom="23dp"
+            android:layout_toStartOf="@+id/chatImageView"
+            android:layout_toLeftOf="@+id/chatImageView"
+            android:layout_toEndOf="@+id/AboutUs"
+            android:layout_toRightOf="@+id/AboutUs"
             android:src="@drawable/tnstc" />
 
 

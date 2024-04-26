@@ -3,8 +3,7 @@ package com.example.BusBuddyVellore;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+import android.os.Handler;
 
 import com.example.utis.R;
 
@@ -15,16 +14,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Get the reference to the ImageView within the onCreate method
-        ImageView nextPageImageView = findViewById(R.id.nextPage);
-
-        // Set the onClickListener for the ImageView
-        nextPageImageView.setOnClickListener(new View.OnClickListener() {
+        // Create a Handler to delay the navigation
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class); // Use MainActivity.this as the context
+            public void run() {
+                // Start the next activity after 2 seconds delay
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
+                // Finish the current activity
+                finish();
             }
-        });
+        }, 1); // 2000 milliseconds = 2 seconds delay
     }
 }

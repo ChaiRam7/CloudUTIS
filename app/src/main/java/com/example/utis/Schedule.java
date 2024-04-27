@@ -21,6 +21,7 @@ public class Schedule extends AppCompatActivity {
         ArrayList<String> timingsList = getIntent().getStringArrayListExtra("timingsList");
 
         ListView timingsListView = findViewById(R.id.timingsListView);
+        assert timingsList != null;
         ArrayAdapter<String> timingsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, timingsList);
         timingsListView.setAdapter(timingsAdapter);

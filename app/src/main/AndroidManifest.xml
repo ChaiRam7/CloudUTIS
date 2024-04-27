@@ -18,7 +18,7 @@
 
     <!-- MainActivity declaration with launcher intent filter -->
     <activity
-        android:name="com.example.BusBuddyVellore.MainActivity"
+        android:name="com.example.utis.MainActivity"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -28,23 +28,23 @@
 
     <!-- Insert your existing activity declarations here -->
     <activity
-        android:name="com.example.BusBuddyVellore.Schedule"
+        android:name="com.example.utis.Schedule"
         android:exported="false" />
 
     <activity
-        android:name="com.example.BusBuddyVellore.TimeActivity"
+        android:name="com.example.utis.TimeActivity"
         android:exported="false" />
     <activity
-        android:name="com.example.BusBuddyVellore.Other"
+        android:name="com.example.utis.Other"
         android:exported="false" />
     <activity
-        android:name="com.example.BusBuddyVellore.Admin"
+        android:name="com.example.utis.Admin"
         android:exported="false" />
     <activity
-        android:name="com.example.BusBuddyVellore.AboutUs"
+        android:name="com.example.utis.AboutUs"
         android:exported="false" />
     <activity
-        android:name="com.example.BusBuddyVellore.HomeActivity"
+        android:name="com.example.utis.HomeActivity"
         android:exported="false" />
 
 

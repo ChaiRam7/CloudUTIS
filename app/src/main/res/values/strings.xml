@@ -13,4 +13,5 @@
     <string name="TextView">TextView</string>
     <string name="No_direct_buses_available">TextView</string>
     <string name="BusBuddyVellore">app_name</string>
+    <string name="made_for_vellore_by_vitians">Made for Vellore by VITians</string>
 </resources>

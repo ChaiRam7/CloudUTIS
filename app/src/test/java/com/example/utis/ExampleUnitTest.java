@@ -1,4 +1,4 @@
-package com.example.BusBuddyVellore;
+package com.example.utis;
 
 import org.junit.Test;
 

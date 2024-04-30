@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +28,8 @@ public class HomeActivity extends AppCompatActivity {
     private Spinner departureSpinner, arrivalSpinner;
     private Button timingButton, scheduleButton;
 
+    private ImageView notificationImageView, aboutUsImageView, cimage, dimage;
+
     private DatabaseReference routesRef;
 
     @Override
@@ -42,6 +46,11 @@ public class HomeActivity extends AppCompatActivity {
         arrivalSpinner = findViewById(R.id.arrival);
         timingButton = findViewById(R.id.timing);
         scheduleButton = findViewById(R.id.schedule);
+
+        notificationImageView = findViewById(R.id.notification);
+        aboutUsImageView = findViewById(R.id.AboutUs);
+        cimage = findViewById(R.id.chatImageView);
+        dimage=findViewById(R.id.imageView3);
 
         // Set up the spinners
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new ArrayList<>());
@@ -63,9 +72,39 @@ public class HomeActivity extends AppCompatActivity {
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle schedule button click
+            fetchFirebaseDataSnapshot();
+
             }
         });
+
+    }
+
+    private void fetchFirebaseDataSnapshot() {
+        routesRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Check if there are any children in the snapshot
+                if (dataSnapshot.getChildren().iterator().hasNext()) {
+                    // Get the first child snapshot
+                    DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
+                    // Log the first data snapshot
+                    Log.d(TAG, "First data snapshot: " + firstChild.getValue());
+                    // Display the first data snapshot in a dialog or toast
+                    // For example:
+                    Toast.makeText(HomeActivity.this, "First data snapshot: " + firstChild.getValue(), Toast.LENGTH_LONG).show();
+                } else {
+                    // No data found
+                    Toast.makeText(HomeActivity.this, "No data found in Firebase", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "fetchFirstDataSnapshot:onCancelled", error.toException());
+                // Handle database error
+            }
+        });
+
     }
 
     private void loadRoutesData() {

@@ -68,8 +68,12 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         // Initialize Firebase
+        // Assuming you've already created an instance of FirebaseDatabase and a reference to your database somewhere in your code
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        routesRef = database.getReference();
+        routesRef = database.getReference("BusBuddy");
+
+// FirebaseDatabase.getInstance().getReference("BusBuddy");
+// routesRef = database.getReference();
 
         // Get references to views
         departureSpinner = findViewById(R.id.departure);
@@ -80,7 +84,8 @@ public class HomeActivity extends AppCompatActivity {
         notificationImageView = findViewById(R.id.notification);
         aboutUsImageView = findViewById(R.id.AboutUs);
         cimage = findViewById(R.id.chatImageView);
-        dimage=findViewById(R.id.imageView3);
+        dimage = findViewById(R.id.imageView3);
+
 
         cimage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "🌟Thank you for reaching out our Support team", Toast.LENGTH_SHORT).show();
 
             }
+
             public void openWhatsAppChat(String phoneNumber) {
                 // Open WhatsApp chat using Intent
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -106,6 +112,7 @@ public class HomeActivity extends AppCompatActivity {
                 openWhatsAppChat("9445014448");
                 Toast.makeText(HomeActivity.this, "We're ready to hear about your transportation experience. What can we help you with today?", Toast.LENGTH_SHORT).show();
             }
+
             public void openWhatsAppChat(String phoneNumber) {
                 // Open WhatsApp chat using Intent
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -139,62 +146,87 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //spinner - Departure
-        ArrayAdapter<String> departureAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"KATPADI","VELLORE"});
+        ArrayAdapter<String> departureAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"KATPADI", "VELLORE"});
         departureAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         departureSpinner.setAdapter(departureAdapter);
 
 
         //Spinner Arrival
-        ArrayAdapter<String> arrivalAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> arrivalAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"66 PUTHUR", "A.K.PADAVEDU", "ADUKAMPARAI", "ADUKAMPARAI G.H.", "ADUKKAMPARAI", "AGARAM", "AGARAMCHERI", "AMATHUR", "AMIRTHI",
+                "AMMAPALAYAM", "AMMAVARPALLI", "ANAICUT", "ANAICUT TALUK OFFICE", "ANANTHAPURAM H.S", "ARAKKONAM", "ARCOT", "ARCOTTANKUDISAI", "ARJUNAPURAM", "ATHIYUR", "AUTHUKADAI", "AUXILIM COLLEGE", "AVANARANGAPALLI", "Arni", "BAGAYAM", "BHEL", "CHETTITHANGAL", "CHETTIYANTHAL", "CHINNACHERI", "CHINNAPUTHUR", "CHOLAVARAM", "Che.Agaram", "Cheyyar", "DEVARISHIKUPPAM", "DURAIMOOLAI", "DURUVAM", "ERIPUDUR", "ERIYUR", "G.R.PALAYAM", "GUDIYATHAM", "GURUVA" +
+                "RAJAPALAYAM", "IRUMBULI", "JAMALPURAM", "KALANGAMEDU", "KALLANKULAM", "KALPUDUR", "KANIYAMBADI", "KANNAMANGALAM", "KARUNGALI", "KASIMANAGAR", "KATPADI", "KAVANUR", "KAVANUR R.S", "KILKOTHUR", "KILNAGAR", "KND DEPOT", "KOLLAMANGALAM", "KONAVATTAM", "KUPPIREDDITHANGAL", "LABAIKRISHNAPURAM", "LALAPET", "LAPPAIKRISHNAPURAM", "LATHERI GATE", "MAHADEVAMALAI", "MAHAMADUPURAM", "MARUHTHAMPAKKAM",
+                "MARUTHAMPAKKAM", "MELAKUPPAM", "MELARASAMPET", "MELMANKUPPAM", "MELPADICHATRAM", "MELSENGANATHAM", "MOOJURPATTU", "MOOLAKANKUPPAM", "MOOLAVALASAI", "MOTHAKKAL", "MULLENDRAM", "MUTHUKADAI", "NAICKENERI", "NANJUKONDAPURAM", "ODUGATHUR", "ONNUPURAM", "OTHIYATHUR", "P.K.PURAM", "PACHANAYANIKUPPAM", "PALAMANER", "PALAYATHONDANTHULASI", "PALLATHUR", "PALLIKONDA", "PARADARAMI", "PASUMATHUR", "PERIACHITTERI", "PERIYABODINATHAM", "PERIYAPUDUR",
+                "PERUMALKUPPAM", "PINNATHURAI", "PONNAI", "PONNAIPUDUR", "PUDUPALAYAM", "PUNGANOOR", "PUTHUR", "Polur", "R.KRISHNAPURAM", "RAGUNATHAPURAM", "RANIPET", "RATHINAGIRI", "REDDIPALAYAM", "REDDIYUR", "SEDUVALAI", "SENDRAMPALLI", "SENDRAYANKOTTAI", "SENJI", "SENJIKRISHNAPURAM", "SERKADU", "SHOLINGHUR", "SINGAREDDIYUR", "SINGIRIKOIL", "SIVANATHAPURAM", "SRIPURAM", "T.E.L.", "T.E.L./AP", "THENGAL", "THIPPASAMUDRAM", "THIRUTHANI", "THIRUVALLUVAR UNIV",
+                "THONDANTHULASI", "TINDIVANAM", "Thiruvannamalai", "ULLIPUDUR", "ULUNTHURPET", "VALAYAKARANPATTI", "VALLIMALAI", "VANDRANTHANGAL", "VARADALAMPATTU", "VARADALAMPET", "VARADARAJAPURAM", "VARGURPATTINAM", "VAZHAVANKUNDRAM", "VAZIYUR", "VELLORE", "VENKATAPURAM", "VILAPAKKAM", "VINNAMPALLI", "VIRUDHUNAGAR", "Vazhiyur", "WALAJA"});
         arrivalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         arrivalSpinner.setAdapter(arrivalAdapter);
 
+
         // Load routes data
-        loadRoutesData();
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //ScheduleDetails();
+            }
+        });
+
 
         // Set click listeners
         timingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle timing button click
+                // Retrieve data from Firebase when timing button is clicked
+                retrieveBusTiming();
             }
         });
-
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
     }
 
-    private void loadRoutesData() {
-        routesRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<String> destinations = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String destination = snapshot.child("Destination").getValue(String.class);
-                    if (destination != null && !destinations.contains(destination)) {
-                        destinations.add(destination);
-                        System.out.println(destination);
+
+
+
+    private void retrieveBusTiming() {
+        // Assuming currentTime is a string representing the current time
+        String currentTime = getCurrentTime();
+
+        routesRef.orderByChild("Source Time").startAt(currentTime).limitToFirst(1)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                String busName = snapshot.child("Route").getValue(String.class);
+                                String sourceTime = snapshot.child("Source Time").getValue(String.class);
+                                String destinationTime = snapshot.child("Destination Time").getValue(String.class);
+
+                                // Create the timing string
+                                String timing = "BUS NAME: " + busName + "\n" +
+                                        "SOURCE TIME: " + sourceTime + "\n" +
+                                        "DESTINATION TIME: " + destinationTime;
+
+                                // Display the timing string
+                                Toast.makeText(HomeActivity.this, timing, Toast.LENGTH_SHORT).show();
+                                return; // Exit after displaying the timing for the first matching bus
+                            }
+                        } else {
+                            Toast.makeText(HomeActivity.this, "No buses available at the moment", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
 
-                ArrayAdapter<String> adapter = (ArrayAdapter<String>) departureSpinner.getAdapter();
-                adapter.clear();
-                adapter.addAll(destinations);
-                arrivalSpinner.setAdapter(adapter);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "loadRoutesData:onCancelled", error.toException());
-            }
-        });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e(TAG, "Error fetching data", databaseError.toException());
+                        Toast.makeText(HomeActivity.this, "Error fetching data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
+    private String getCurrentTime() {
+        // Implement logic to get the current time in the desired format
+        // For example, you can use SimpleDateFormat to format the current time
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+        return dateFormat.format(new Date());
+    }
+
 
 
 }

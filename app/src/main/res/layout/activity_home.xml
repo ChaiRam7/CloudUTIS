@@ -34,7 +34,7 @@
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="wrap_content"
-            android:layout_height="88dp"
+            android:layout_height="96dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentEnd="true"
@@ -44,7 +44,7 @@
             android:layout_marginLeft="142dp"
             android:layout_marginEnd="135dp"
             android:layout_marginRight="135dp"
-            android:layout_marginBottom="436dp"
+            android:layout_marginBottom="428dp"
             app:srcCompat="@drawable/road" />
 
         <Spinner
@@ -99,7 +99,7 @@
 
         <Spinner
             android:id="@+id/arrival"
-            android:layout_width="365dp"
+            android:layout_width="361dp"
             android:layout_height="73dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"

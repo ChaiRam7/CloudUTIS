@@ -86,6 +86,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openWhatsAppChat("8144227063");
+                Toast.makeText(HomeActivity.this, "🌟Thank you for reaching out our Support team", Toast.LENGTH_SHORT).show();
+
             }
             public void openWhatsAppChat(String phoneNumber) {
                 // Open WhatsApp chat using Intent
@@ -101,6 +103,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openWhatsAppChat("9445014448");
+                Toast.makeText(HomeActivity.this, "We're ready to hear about your transportation experience. What can we help you with today?", Toast.LENGTH_SHORT).show();
             }
             public void openWhatsAppChat(String phoneNumber) {
                 // Open WhatsApp chat using Intent

@@ -21,6 +21,35 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
@@ -30,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView notificationImageView, aboutUsImageView, cimage, dimage;
 
+    private TextView timelyTextView;
     private DatabaseReference routesRef;
 
     @Override
@@ -51,6 +81,58 @@ public class HomeActivity extends AppCompatActivity {
         aboutUsImageView = findViewById(R.id.AboutUs);
         cimage = findViewById(R.id.chatImageView);
         dimage=findViewById(R.id.imageView3);
+
+        cimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsAppChat("8144227063");
+            }
+            public void openWhatsAppChat(String phoneNumber) {
+                // Open WhatsApp chat using Intent
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String url = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+
+        dimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsAppChat("9445014448");
+            }
+            public void openWhatsAppChat(String phoneNumber) {
+                // Open WhatsApp chat using Intent
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String url = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+        // Inflate the layout containing the timelyTextView
+        View timeLayout = getLayoutInflater().inflate(R.layout.activity_time, null);
+        // Find the timelyTextView within the inflated layout
+        timelyTextView = timeLayout.findViewById(R.id.timely);
+
+        // Set click listeners
+        notificationImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, Admin.class);
+                startActivity(intent);
+            }
+        });
+
+        aboutUsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set up the spinners
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new ArrayList<>());

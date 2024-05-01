@@ -96,6 +96,7 @@ public class HomeActivity extends AppCompatActivity {
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
             }
+
         });
 
 
@@ -137,11 +138,17 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        // Set up the spinners
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new ArrayList<>());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        departureSpinner.setAdapter(adapter);
-        arrivalSpinner.setAdapter(adapter);
+        //spinner - Departure
+        ArrayAdapter<String> departureAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[]{"KATPADI","VELLORE"});
+        departureAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        departureSpinner.setAdapter(departureAdapter);
+
+
+        //Spinner Arrival
+        ArrayAdapter<String> arrivalAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item);
+        arrivalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arrivalSpinner.setAdapter(arrivalAdapter);
 
         // Load routes data
         loadRoutesData();
@@ -157,36 +164,8 @@ public class HomeActivity extends AppCompatActivity {
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            fetchFirebaseDataSnapshot();
 
-            }
-        });
 
-    }
-
-    private void fetchFirebaseDataSnapshot() {
-        routesRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Check if there are any children in the snapshot
-                if (dataSnapshot.getChildren().iterator().hasNext()) {
-                    // Get the first child snapshot
-                    DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
-                    // Log the first data snapshot
-                    Log.d(TAG, "First data snapshot: " + firstChild.getValue());
-                    // Display the first data snapshot in a dialog or toast
-                    // For example:
-                    Toast.makeText(HomeActivity.this, "First data snapshot: " + firstChild.getValue(), Toast.LENGTH_LONG).show();
-                } else {
-                    // No data found
-                    Toast.makeText(HomeActivity.this, "No data found in Firebase", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "fetchFirstDataSnapshot:onCancelled", error.toException());
-                // Handle database error
             }
         });
 
@@ -201,17 +180,21 @@ public class HomeActivity extends AppCompatActivity {
                     String destination = snapshot.child("Destination").getValue(String.class);
                     if (destination != null && !destinations.contains(destination)) {
                         destinations.add(destination);
+                        System.out.println(destination);
                     }
                 }
+
                 ArrayAdapter<String> adapter = (ArrayAdapter<String>) departureSpinner.getAdapter();
                 adapter.clear();
                 adapter.addAll(destinations);
+                arrivalSpinner.setAdapter(adapter);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e(TAG, "loadRoutesData:onCancelled", error.toException());
             }
         });
     }
+
+
 }

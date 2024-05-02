@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView notificationImageView, aboutUsImageView, cimage, dimage;
 
     private TextView timelyTextView;
-    private DatabaseReference routesRef;
+    DatabaseReference routesRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +69,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Initialize Firebase
         // Assuming you've already created an instance of FirebaseDatabase and a reference to your database somewhere in your code
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        routesRef = database.getReference("BusBuddy");
+
 
 // FirebaseDatabase.getInstance().getReference("BusBuddy");
 // routesRef = database.getReference();
@@ -188,6 +187,8 @@ public class HomeActivity extends AppCompatActivity {
         // Assuming currentTime is a string representing the current time
         String currentTime = getCurrentTime();
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        routesRef = database.getReference("BusBuddy");
         routesRef.orderByChild("Source Time").startAt(currentTime).limitToFirst(1)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -202,6 +203,14 @@ public class HomeActivity extends AppCompatActivity {
                                 String timing = "BUS NAME: " + busName + "\n" +
                                         "SOURCE TIME: " + sourceTime + "\n" +
                                         "DESTINATION TIME: " + destinationTime;
+
+                                if (!timing.isEmpty()) {
+                                    Intent intent = new Intent(HomeActivity.this,TimeActivity.class);
+                                    intent.putExtra("message",timing);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(HomeActivity.this, "No routes found for the selected source and destination.", Toast.LENGTH_SHORT).show();
+                                }
 
                                 // Display the timing string
                                 Toast.makeText(HomeActivity.this, timing, Toast.LENGTH_SHORT).show();
